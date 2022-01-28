@@ -1,0 +1,4 @@
+do deploy the app on heroku you first have to build the app with
+ng build
+and force add the dist folder with
+git add -f dist
