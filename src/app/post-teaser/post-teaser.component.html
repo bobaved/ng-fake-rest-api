@@ -1,0 +1,26 @@
+<mat-card class="example-card">
+  <mat-card-subtitle>
+    Post
+  </mat-card-subtitle>
+  <mat-card-title>
+    {{post.title}}
+  </mat-card-title>
+  <mat-card-content>
+    <p>
+      {{post.body}}
+    </p>
+    <mat-list>
+      <div mat-subheader>Comments</div>
+      <mat-list-item *ngFor="let comment of comments" class="my-list-item">
+        <p>{{comment.name}}</p>
+        <p> {{comment.body}} </p>
+        <p> {{comment.email}} </p>
+      </mat-list-item>
+    </mat-list>
+  </mat-card-content>
+  <mat-divider inset></mat-divider>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card>

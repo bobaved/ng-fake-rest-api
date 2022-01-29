@@ -1,18 +1,9 @@
 <mat-list role="list">
   <div mat-subheader>Posts</div>
-  <mat-list-item role="listitem">
-    <mat-icon mat-list-icon>note</mat-icon>
-    <div mat-line>Post Title</div>
-    <div mat-line>Post Content</div>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <mat-icon mat-list-icon>note</mat-icon>
-    <div mat-line>Post Title</div>
-    <div mat-line>Post Content</div>
-  </mat-list-item>
-  <mat-list-item role="listitem">
-    <mat-icon mat-list-icon>note</mat-icon>
-    <div mat-line>Post Title</div>
-    <div mat-line>Post Content</div>
+  <mat-list-item
+    *ngFor="let post of posts"
+    class="list-item"
+  >
+    <app-post-teaser [post]="post"></app-post-teaser>
   </mat-list-item>
 </mat-list>
