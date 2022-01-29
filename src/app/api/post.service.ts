@@ -10,7 +10,7 @@ import { Post } from "../shared/model/post.model";
   providedIn: 'root'
 })
 export class PostService {
-  private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
+  private apiUrl= 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: HttpClient) {}
 
@@ -18,9 +18,17 @@ export class PostService {
     return this.http.get<Post[]>(this.apiUrl)
   }
 
-  getCommentsByPostId(postId: Number) {
+  getCommentsByPostId(postId: Number): Observable<Comment[]> {
     const url = `${this.apiUrl}/${postId}/comments`
 
     return this.http.get<Comment[]>(url);
+  }
+
+  createPost(userId: Number, title: String, body: String): Observable<Post> {
+    return this.http.post<Post>(this.apiUrl, {
+      userId, 
+      title, 
+      body
+    })
   }
 }
